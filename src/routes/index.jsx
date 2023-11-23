@@ -7,6 +7,9 @@ import { New } from '../pages/new'
 import { Profile } from '../pages/profile'
 
 import { Ionicons} from '@expo/vector-icons'
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
 import { ButtonNew } from '../components/ButtonNew'
 
 const Tab = createBottomTabNavigator();
@@ -15,7 +18,7 @@ export function Routes() {
     return(
         <Tab.Navigator screenOptions={{
             headerShown: false,
-            tabBarShowLabel: false,
+            tabBarShowLabel: true,
 
             tabBarStyle:{
                 backgroundColor: "#000",
@@ -24,7 +27,7 @@ export function Routes() {
             tabBarActiveTintColor: "#FFF",
         }}>
             <Tab.Screen
-            name="home"
+            name="Início"
             component={Home}
             options={{
                 tabBarIcon: ({ focused, size, color }) => {
@@ -36,14 +39,14 @@ export function Routes() {
             }}
             />
             <Tab.Screen
-            name="Search"
+            name="Amigos"
             component={Search}
             options={{
                 tabBarIcon: ({ focused, size, color }) => {
                     if(focused) {
-                        return <Ionicons name="search" size={size} color={color}/>
+                        return <Feather name="users" size={size} color={color}/>
                     }
-                    return <Ionicons name="search-outline" size={size} color={color}/>
+                    return <Feather name="users" size={size} color={color}/>
                 }
             }}
             />
@@ -59,26 +62,26 @@ export function Routes() {
             />
 
             <Tab.Screen
-            name="Inbox"
+            name="Caixa de entrada"
             component={Inbox}
             options={{
                 tabBarIcon: ({ focused, size, color }) => {
                     if(focused) {
-                        return <Ionicons name="ios-chatbubble-ellipses" size={size} color={color}/>
+                        return <MaterialCommunityIcons name="message-minus-outline" size={size} color={color}/>
                     }
-                    return <Ionicons name="ios-chatbubble-ellipses-outline" size={size} color={color}/>
+                    return <MaterialCommunityIcons name="message-minus-outline" size={size} color={color}/>
                 }
             }}
             />
             <Tab.Screen
-            name="Profile"
+            name="Perfil"
             component={Profile}
             options={{
                 tabBarIcon: ({ focused, size, color }) => {
                     if(focused) {
-                        return <Ionicons name="person" size={size} color={color}/>
+                        return <AntDesign name="user" size={size} color={color}/>
                     }
-                    return <Ionicons name="person-outline" size={size} color={color}/>
+                    return <AntDesign name="user" size={size} color={color}/>
                 }
             }}
             />
