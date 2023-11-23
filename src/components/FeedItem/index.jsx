@@ -1,14 +1,20 @@
 import { useRef, useState } from 'react'
-import { View, Text, StyleSheet, Pressable, Dimensions, TouchableOpacity, Platform, TextInput } from "react-native";
+import { View, Text, StyleSheet, Pressable, Dimensions, TouchableOpacity, Platform, TextInput,} from "react-native";
 import { Video } from "expo-av";
 import { Ionicons } from '@expo/vector-icons'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+
+
 
 const { height: HeightScreen } = Dimensions.get("screen")
 
 export function FeedItem({ data }) {
+
+    const navigation = useNavigation();
+
 
     const video = useRef(null);
     const [status, setStatus] = useState({})
@@ -49,7 +55,7 @@ export function FeedItem({ data }) {
 
             </View>
 
-            <View style={styles.actions}>
+            <View style={styles.actions}> 
                 <TouchableOpacity style={styles.actionButton}>
                     <FontAwesome name="circle-thin" size={50} color="#fff" />
                     <TextInput style={{backgroundColor: "red", textAlign: 'center', width: 20, height: 20, borderRadius: 52, marginLeft: 11, marginTop:-15 }}>
@@ -57,11 +63,13 @@ export function FeedItem({ data }) {
                     <Text style={styles.actionTextC}>+</Text>
 
                     </TextInput>
-                </TouchableOpacity>
 
-                <TouchableOpacity style={styles.actionButton}>
-                    <Ionicons name="heart" size={35} color="#fff" />
+                </TouchableOpacity>
+                
+                <TouchableOpacity style={styles.actionButton} onPress={() => navigation.navigate("Perfil")}>
+                    <Ionicons name="heart" size={35} color="#fff" onClick/>
                     <Text style={styles.actionText}>109.6K</Text>
+                    
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.actionButton}>
@@ -88,7 +96,7 @@ export function FeedItem({ data }) {
                 ref={video}
                 style={{ width: '100%', height: HeightScreen }}
                 source={{ uri: data?.video }}
-                resizeMode='cover'
+                resizeMode="cover"
                 shouldPlay={false}
                 isMuted={false}
                 isLooping={true}
@@ -122,7 +130,6 @@ const styles = StyleSheet.create({
         right: 10,
         bottom: Platform === 'android' ? 120 : 170,
         gap: 8,
-        resizeMode: 'contain',
         alignSelf: 'center',
     },
 
@@ -134,7 +141,6 @@ const styles = StyleSheet.create({
     },
 
     actionTextC: {
-        resizeMode: 'contain',
         alignSelf: 'center',
         zIndex: 99,
         color: '#fff',

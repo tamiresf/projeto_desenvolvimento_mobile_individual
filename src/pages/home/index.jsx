@@ -14,7 +14,7 @@ export function Home() {
             video: 'https://i.imgur.com/wkf1Cn0.mp4',
             name: 'Hudson Aquino',
             descripton: 'Toda estressadinha tem seu palhaço, não é mesmo? ...',
-            musica: '♫ ém música de: Paraíso'
+            musica: '♫ ém música'
         },
         {
             id: '2',
