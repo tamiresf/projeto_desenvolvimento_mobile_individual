@@ -21,6 +21,12 @@ npx expo start
 2. A primeira rota é o Home, a segunda está vinculada ao ícone de like da primeira página.
 3. A segunda rota contém um Input vinculado a um State e um Botão TouchableOpacity.
 
+<p>print da tela original</p>
+<img src="/assets/original.jpeg">
+
+<p>Print do clone da tela</p>
+<img src="/assets/clone.jpeg">
+
 ## Ferramentas e tecnologias
 * JavaScript
 * Android Studio
