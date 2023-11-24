@@ -40,7 +40,6 @@ export function FeedItem({ data }) {
         right: 18,
         bottom: Platform === 'android' ? 120 : 170,
         gap: 8,
-        resizeMode: 'contain',
         alignSelf: 'center',}}>
 
            
@@ -66,7 +65,7 @@ export function FeedItem({ data }) {
 
                 </TouchableOpacity>
                 
-                <TouchableOpacity style={styles.actionButton} onPress={() => navigation.navigate("Perfil")}>
+                <TouchableOpacity style={styles.actionButton} onPress={() => navigation.navigate("Caixa de entrada")}>
                     <Ionicons name="heart" size={35} color="#fff" onClick/>
                     <Text style={styles.actionText}>109.6K</Text>
                     
